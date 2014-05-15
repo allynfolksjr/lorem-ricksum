@@ -7,4 +7,8 @@ namespace :rick do
     load_scripts
   end
 
+  task regenerate: :environment do
+    generate_ipsum_file
+  end
+
 end
