@@ -29,6 +29,8 @@ gem 'nokogiri' # html parsin'
 
 gem 'newrelic_rpm'
 
+gem 'rack-timeout'
+
 
 group :development do
   gem 'pry-rails'
