@@ -27,6 +27,8 @@ gem 'spring',        group: :development
 
 gem 'nokogiri' # html parsin'
 
+gem 'newrelic_rpm'
+
 
 group :development do
   gem 'pry-rails'
