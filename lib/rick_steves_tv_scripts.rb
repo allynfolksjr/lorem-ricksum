@@ -45,7 +45,7 @@ module RickStevesTvScripts
       if File.exist?(Rails.root + 'rick_steves_phrases')
         # yolo weighting
         2.times do
-          words = words + (File.read('rick_steves_phrases').split("\n"))
+          words = words + (File.read('rick_steves_phrases').split("\n")).map(&:strip)
         end
       end
     else
