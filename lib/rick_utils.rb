@@ -34,12 +34,12 @@ module RickUtils
       end
     end
 
-    File.open('rick_steves_words.yml','w'){|f| f.write @words.sort{|w1,w2| w2[1] <=> w1[1]}.to_yaml}
+    File.open(Rails.root + 'lib/raw_tv_show_words.yml','w'){|f| f.write @words.sort{|w1,w2| w2[1] <=> w1[1]}.to_yaml}
   end
 
   def generate_ipsum_file
-    if File.exist?(Rails.root + 'rick_steves_words.yml')
-      words = YAML.load_file('rick_steves_words.yml')
+    if File.exist?(Rails.root + 'lib/rick_steves_words.yml')
+      words = YAML.load_file('lib/rick_steves_words.yml')
       words.select!{|word| word[1] > 100 }.map!{|word| word[0]}
 
       if File.exist?(Rails.root + 'custom_phrases')
