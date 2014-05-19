@@ -1,4 +1,4 @@
-module RickStevesTvScripts
+module RickUtils
   def load_scripts
     @words = Hash.new(0)
 
@@ -42,17 +42,17 @@ module RickStevesTvScripts
       words = YAML.load_file('rick_steves_words.yml')
       words.select!{|word| word[1] > 100 }.map!{|word| word[0]}
 
-      if File.exist?(Rails.root + 'rick_steves_phrases')
+      if File.exist?(Rails.root + 'custom_phrases')
         # yolo weighting
         2.times do
-          words = words + (File.read('rick_steves_phrases').split("\n")).map(&:strip)
+          words = words + (File.read('custom_phrases').split("\n")).map(&:strip)
         end
       end
     else
       puts "Script words not present. Please run `rake rick:load_scripts`"
     end
 
-    File.open('compiled_words.yml','w'){|f| f.write words.to_yaml}
+    File.open(Rails.root + 'lib/compiled_words.yml','w'){|f| f.write words.to_yaml}
   end
 
 end

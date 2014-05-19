@@ -1,5 +1,5 @@
-require_relative '../../lib/rick_steves_tv_scripts'
-include RickStevesTvScripts
+require_relative '../../lib/rick_utils'
+include RickUtils
 
 namespace :rick do
   desc "TODO"

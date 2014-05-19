@@ -37,7 +37,7 @@ class Ipsum
       if @ipsum_words
         @ipsum_words
       else
-        @ipsum_words = YAML.load_file(Rails.root + "compiled_words.yml")
+        @ipsum_words = YAML.load_file(Rails.root + "lib/compiled_words.yml")
       end
     end
 
